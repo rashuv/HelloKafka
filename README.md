@@ -56,18 +56,18 @@ c) In *log4j.properties*
 then start kafka  
 `~/kafka_2.10-0.8.2.1$ bin/kafka-server-start.sh config/server.properties`
 
-9. Create topic "test" [In separate cygwin shell]
+9. Create topic "test" [In separate cygwin shell]  
 `~/kafka_2.10-0.8.2.1$ dos2unix bin/kafka-topics.sh`  
 `~/kafka_2.10-0.8.2.1$ bin/kafka-topics.sh --zookeeper localhost:2181 --create --replication-factor 1 --partitions 1 --topic test`
 
 10. To check all available topics  
 `~/kafka_2.10-0.8.2.1$ bin/kafka-topics.sh --zookeeper localhost:2181 --list`
 
-11. Start producer [In separate cygwin shell] 
+11. Start producer [In separate cygwin shell]  
 `~/kafka_2.10-0.8.2.1$ dos2unix bin/kafka-console-producer.sh`  
 `~/kafka_2.10-0.8.2.1$ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test`
 
-11. Start consumer [In separate cygwin shell] 
+11. Start consumer [In separate cygwin shell]  
 `~/kafka_2.10-0.8.2.1$ dos2unix bin/kafka-console-consumer.sh`  
 `~/kafka_2.10-0.8.2.1$ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning`
 
