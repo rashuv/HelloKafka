@@ -25,7 +25,7 @@ just delete the extra '\' before bin so it should be
    ```
 
 6. **Zookeeper** :
-in kafka-run-class.sh at the end, replace $CLASSPATH with `cygpath -wp $CLASSPATH` and add `#JAVA=java`, see below updated code
+In kafka-run-class.sh at the end, replace $CLASSPATH with `cygpath -wp $CLASSPATH` and add `#JAVA=java`, see below updated code
 
    ```
 # Launch mode
@@ -44,30 +44,30 @@ Then run
 `~/kafka_2.10-0.8.2.1$ bin/zookeeper-server-start.sh config/zookeeper.properties`
 
 7. **Properties changes**  
-a) in *zookeeper.properties*  
+a) In *zookeeper.properties*  
 `dataDir=C://kafka_2.10-0.8.2.1/temp/zookeeper`  
-b) in *server.properties*   
+b) In *server.properties*   
 `log.dirs=C://kafka_2.10-0.8.2.1/logs`  
-c) in *log4j.properties*  
+c) In *log4j.properties*  
 `kafka.logs.dir=C://kafka_2.10-0.8.2.1/logs`  
 
-8. time to run kafka, first run  
+8. Time to run kafka [In separate cygwin shell], first run  
 `~/kafka_2.10-0.8.2.1$ dos2unix bin/kafka-server-start.sh`  
 then start kafka  
 `~/kafka_2.10-0.8.2.1$ bin/kafka-server-start.sh config/server.properties`
 
-9. Create topic "test"  
+9. Create topic "test" [In separate cygwin shell]
 `~/kafka_2.10-0.8.2.1$ dos2unix bin/kafka-topics.sh`  
 `~/kafka_2.10-0.8.2.1$ bin/kafka-topics.sh --zookeeper localhost:2181 --create --replication-factor 1 --partitions 1 --topic test`
 
-10. to check all available topics  
+10. To check all available topics  
 `~/kafka_2.10-0.8.2.1$ bin/kafka-topics.sh --zookeeper localhost:2181 --list`
 
-11. start producer  
+11. Start producer [In separate cygwin shell] 
 `~/kafka_2.10-0.8.2.1$ dos2unix bin/kafka-console-producer.sh`  
 `~/kafka_2.10-0.8.2.1$ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test`
 
-11. start consumer  
+11. Start consumer [In separate cygwin shell] 
 `~/kafka_2.10-0.8.2.1$ dos2unix bin/kafka-console-consumer.sh`  
 `~/kafka_2.10-0.8.2.1$ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beginning`
 
