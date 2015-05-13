@@ -18,11 +18,12 @@ just delete the extra '\' before bin so it should be
 `C:\Program Files (x86)\sbt\bin`
 
 5. Go to kafka folder and run below commands
-```
+   ```
 ~/kafka_2.10-0.8.2.1$ sbt update
 ~/kafka_2.10-0.8.2.1$ sbt package
 ~/kafka_2.10-0.8.2.1$ sbt sbt-dependency
-```
+   ```
+
 6. **Zookeeper** :
 in kafka-run-class.sh at the end, replace $CLASSPATH with `cygpath -wp $CLASSPATH` and add `#JAVA=java`, see below updated code
 
