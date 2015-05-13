@@ -13,7 +13,7 @@ import java.util.Properties;
  * Created by user on 8/4/14.
  */
 public class HelloKafkaProducer {
-    final static String TOPIC = "pythontest";
+    final static String TOPIC = "testconsole";
 
 
     public static void main(String[] argv){

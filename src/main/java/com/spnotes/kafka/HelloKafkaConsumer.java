@@ -23,7 +23,7 @@ import java.io.UnsupportedEncodingException;
  */
 public class HelloKafkaConsumer extends  Thread {
     final static String clientId = "SimpleConsumerDemoClient";
-    final static String TOPIC = "pythontest";
+    final static String TOPIC = "testconsole";
     ConsumerConnector consumerConnector;
 
 
