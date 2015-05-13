@@ -12,7 +12,7 @@ import kafka.producer.ProducerConfig;
  * Created by user on 8/4/14.
  */
 public class HelloKafkaProducer {
-    final static String TOPIC = "testconsole";
+    final static String TOPIC = "test";
 
     public static void main(String[] argv) {
         Properties properties = new Properties();

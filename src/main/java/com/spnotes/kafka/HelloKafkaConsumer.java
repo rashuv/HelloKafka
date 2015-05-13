@@ -20,7 +20,7 @@ import kafka.message.MessageAndOffset;
  */
 public class HelloKafkaConsumer extends Thread {
     final static String clientId = "SimpleConsumerDemoClient";
-    final static String TOPIC = "testconsole";
+    final static String TOPIC = "test";
     ConsumerConnector consumerConnector;
 
     public static void main(String[] argv) throws UnsupportedEncodingException {
