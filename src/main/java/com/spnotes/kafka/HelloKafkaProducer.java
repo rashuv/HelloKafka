@@ -15,9 +15,7 @@ public class HelloKafkaProducer {
     final static String TOPIC = "test";
 
     public static void main(String[] argv) {
-        Properties properties = new Properties();
-        properties.put("metadata.broker.list", "localhost:9092");
-        properties.put("serializer.class", "kafka.serializer.StringEncoder");
+        Properties properties = getProperties();
         ProducerConfig producerConfig = new ProducerConfig(properties);
         Producer<String, String> producer = new Producer<String, String>(producerConfig);
         SimpleDateFormat sdf = new SimpleDateFormat();
@@ -25,5 +23,12 @@ public class HelloKafkaProducer {
                 "Test message from java program " + sdf.format(new Date()));
         producer.send(message);
         producer.close();
+    }
+
+    private static Properties getProperties() {
+        Properties properties = new Properties();
+        properties.put("metadata.broker.list", "localhost:9092");
+        properties.put("serializer.class", "kafka.serializer.StringEncoder");
+        return properties;
     }
 }
