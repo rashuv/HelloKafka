@@ -23,7 +23,7 @@ public class DBConnection {
 
     private static void getDBConnection() {
         // URL of Oracle database server
-        String url = "jdbc:oracle:thin:@dbserver-110.inf.ncs.com:1521/psndev5";
+        String url = "";
 
         // properties for creating connection to Oracle database
         Properties props = new Properties();
