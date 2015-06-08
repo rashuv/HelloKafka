@@ -27,8 +27,8 @@ public class DBConnection {
 
         // properties for creating connection to Oracle database
         Properties props = new Properties();
-        props.setProperty("user", "psadmin");
-        props.setProperty("password", "psadmin");
+        props.setProperty("user", "");
+        props.setProperty("password", "");
 
         try {
             Class.forName("oracle.jdbc.OracleDriver");
@@ -58,7 +58,7 @@ public class DBConnection {
 
         Connection conn = DBConnection.getInstance().getConnection();
 
-        String sql = "select * from NCS_DOMAIN.tin_can_events";
+        String sql = "";
         PreparedStatement preStatement = conn.prepareStatement(sql);
         ResultSet rs = preStatement.executeQuery();
         while (rs.next()) {
